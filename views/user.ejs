@@ -1,0 +1,125 @@
+<%- include('partials/header') %>
+
+<div class="container customer-container">
+  <div class="text-center">
+    <i class="fas fa-user-circle fa-9x customer-icon"></i>
+
+    <h1 class="display-3 mt-4"></h1>
+    <p class="lead">Register or Login to access your account</p>
+    <hr class="my-4">
+  </div>
+
+  <div class="text-center">
+    <a href="/userregister" class="btn-custom btn-register mx-3">
+      <i class="fas fa-user-plus"></i> Register
+    </a>
+
+    <a href="/userlogin" class="btn-custom btn-login mx-3">
+      <i class="fas fa-sign-in-alt"></i> Login
+    </a>
+  </div>
+</div>
+
+<%- include('partials/footer') %>
+
+<!-- New Styles -->
+<style>
+  /* Container Styling */
+  .customer-container {
+    background: linear-gradient(135deg, #f0f0f0, #dbeafe);
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    padding: 80px 40px;
+    max-width: 1100px;
+    margin: 60px auto;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+  }
+
+  .customer-container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Icon Styling */
+  .customer-icon {
+    color: #007bff;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .customer-icon:hover {
+    transform: scale(1.1);
+  }
+
+  /* Header Styling */
+  h1 {
+    font-size: 4rem;
+    color: #333;
+    font-weight: bold;
+  }
+
+  p.lead {
+    color: #555;
+    font-size: 1.4rem;
+  }
+
+  hr {
+    border: 0;
+    height: 2px;
+    background: linear-gradient(to right, #007bff, #00c6ff);
+    width: 60%;
+    margin: 30px auto;
+  }
+
+  /* Button Styling */
+  .btn-custom {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 30px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  .btn-register {
+    background: linear-gradient(135deg, #28a745, #34d399);
+  }
+
+  .btn-login {
+    background: linear-gradient(135deg, #007bff, #4a90e2);
+  }
+
+  .btn-custom:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  }
+
+  .btn-register:hover {
+    background: #34d399;
+  }
+
+  .btn-login:hover {
+    background: #4a90e2;
+  }
+
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .customer-container {
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    .btn-custom {
+      padding: 12px 25px;
+      font-size: 18px;
+    }
+  }
+</style>

@@ -1,0 +1,167 @@
+<%- include('partials/header') %>
+
+<div class="container register-container">
+  <div class="text-center">
+    <i class="fas fa-user-plus fa-8x register-icon"></i>
+
+    <h1 class="display-4 mt-4">Cashier Register</h1>
+    <p class="lead">Create your account and get started</p>
+    <hr class="my-4">
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-lg-8 col-md-10">
+      <div class="card shadow-lg register-card">
+        <div class="card-body">
+
+          <!-- Registration Form -->
+          <form action="/cashierregister" method="POST">
+            
+            <div class="form-group">
+              <label for="email"><i class="fas fa-envelope"></i> Email</label>
+              <input type="email" class="form-control" name="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="form-group">
+              <label for="password"><i class="fas fa-lock"></i> Password</label>
+              <input type="password" class="form-control" name="password" placeholder="Create a strong password" required>
+            </div>
+
+            <div class="text-center">
+              <button type="submit" class="btn-custom btn-register">
+                <i class="fas fa-user-check"></i> Register
+              </button>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/footer') %>
+
+<!-- New Styles -->
+<style>
+  /* Container Styling */
+  .register-container {
+    background: linear-gradient(135deg, #f0f0f0, #dbeafe);
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    padding: 60px 30px;
+    max-width: 1000px;
+    margin: 60px auto;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .register-container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Icon Styling */
+  .register-icon {
+    color: #007bff;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .register-icon:hover {
+    transform: scale(1.1);
+  }
+
+  /* Header Styling */
+  h1 {
+    font-size: 3rem;
+    color: #333;
+    font-weight: bold;
+  }
+
+  p.lead {
+    color: #666;
+    font-size: 1.3rem;
+  }
+
+  hr {
+    border: 0;
+    height: 2px;
+    background: linear-gradient(to right, #007bff, #00c6ff);
+    width: 60%;
+    margin: 30px auto;
+  }
+
+  /* Card Styling */
+  .register-card {
+    border-radius: 15px;
+    transition: all 0.3s ease-in-out;
+    padding: 40px;
+  }
+
+  .register-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Form Styling */
+  .form-group label {
+    font-weight: bold;
+    color: #444;
+  }
+
+  .form-control {
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    transition: all 0.3s;
+  }
+
+  .form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 10px #007bff;
+  }
+
+  /* Button Styling */
+  .btn-custom {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+  }
+
+  .btn-register {
+    background: linear-gradient(135deg, #28a745, #20c997);
+  }
+
+  .btn-custom:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  }
+
+  .btn-register:hover {
+    background: #20c997;
+  }
+
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .register-container {
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    .btn-custom {
+      padding: 12px 20px;
+      font-size: 16px;
+    }
+  }
+</style>

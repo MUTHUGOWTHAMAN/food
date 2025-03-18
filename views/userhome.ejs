@@ -1,0 +1,151 @@
+<%- include('partials/header') %>
+
+<!-- Main Container -->
+<div class="container-fluid welcome-container">
+
+  <!-- Jumbotron Section -->
+  <div class="jumbotron text-center welcome-jumbotron">
+    <div class="container">
+      
+      <!-- Icon and Heading -->
+      <i class="fas fa-user-circle fa-9x icon-user"></i>
+      <h1 class="display-3 mt-4">Welcome, User!</h1>
+      <p class="lead">Check payment details, edit profiles, and view fine amounts</p>
+      
+      <hr class="my-4">
+
+      <!-- Action Buttons -->
+      <div class="button-group">
+        <a class="btn btn-custom btn-show" href="/customer" role="button">
+          <i class="fas fa-eye"></i> Show
+        </a>
+        <a class="btn btn-custom btn-logout" href="/" role="button">
+          <i class="fas fa-sign-out-alt"></i> Log Out
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<%- include('partials/footer') %>
+
+<!-- New Styles -->
+<style>
+  /* Main Container Styling */
+  .welcome-container {
+    background: linear-gradient(135deg, #f0f0f0, #dbeafe);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+  }
+
+  /* Jumbotron Styling */
+  .welcome-jumbotron {
+    background: linear-gradient(135deg, #fb8da0, #f06a8a);
+    color: #fff;
+    border-radius: 15px;
+    padding: 80px 40px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+  }
+
+  .welcome-jumbotron:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 55px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Icon Styling */
+  .icon-user {
+    color: #fff;
+    transition: transform 0.3s;
+  }
+
+  .icon-user:hover {
+    transform: scale(1.1);
+  }
+
+  /* Heading and Text */
+  h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+  }
+
+  .lead {
+    font-size: 1.4rem;
+    color: #f0f0f0;
+    margin-bottom: 40px;
+  }
+
+  hr {
+    border: 0;
+    height: 2px;
+    background: #fff;
+    width: 60%;
+    margin: 30px auto;
+  }
+
+  /* Button Group Styling */
+  .button-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  /* Buttons */
+  .btn-custom {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 35px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 50px;
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.3s;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  .btn-show {
+    background: linear-gradient(135deg, #17a2b8, #00bcd4);
+  }
+
+  .btn-logout {
+    background: linear-gradient(135deg, #007bff, #4dabf7);
+  }
+
+  .btn-custom:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Responsive Design */
+  @media (max-width: 992px) {
+    .welcome-jumbotron {
+      padding: 60px 30px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    .btn-custom {
+      padding: 12px 25px;
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .button-group {
+      flex-direction: column;
+    }
+
+    .btn-custom {
+      width: 100%;
+    }
+  }
+</style>

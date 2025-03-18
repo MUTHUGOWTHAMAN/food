@@ -1,0 +1,146 @@
+<%- include('partials/header') %>
+
+<div class="container mt-5">
+
+  <!-- Page Header -->
+  <div class="text-center mb-4">
+    <i class="fas fa-shopping-cart fa-6x text-primary"></i>
+    <h1 class="display-4 mt-3">Add Order Details</h1>
+    <p class="text-secondary">Enter the order information below</p>
+    <hr class="my-4">
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-lg-8 col-md-10">
+      <div class="card shadow-lg border-0">
+
+        <div class="card-body">
+          
+          <!-- Order Form -->
+          <form action="/orderData" method="POST">
+
+            <!-- Customer Phone Number -->
+            <div class="form-group mb-4">
+              <label for="customerPhNo" class="form-label">Customer Phone Number</label>
+              <input type="text" id="customerPhNo" class="form-control" name="customerPhNo" placeholder="Enter phone number" required>
+            </div>
+
+            <!-- Product Category -->
+            <div class="form-group mb-4">
+              <label for="productCategory" class="form-label">Product Category</label>
+              <input type="text" id="productCategory" class="form-control" name="productCategory" placeholder="Enter product category" required>
+            </div>
+
+            <!-- Product Name -->
+            <div class="form-group mb-4">
+              <label for="productName" class="form-label">Product Name</label>
+              <input type="text" id="productName" class="form-control" name="productName" placeholder="Enter product name" required>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary btn-lg w-100">Submit Order</button>
+            </div>
+
+          </form>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<%- include('partials/footer') %>
+
+<style>
+
+/* General Styling */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f0f0f0, #e0f7fa);
+  color: #333;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+/* Card Styling */
+.card {
+  border-radius: 12px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Form Styling */
+.form-label {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #007bff;
+}
+
+.form-control {
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border-color 0.3s;
+}
+
+.form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+}
+
+/* Button Styling */
+.btn-lg {
+  font-size: 1.2rem;
+  padding: 12px 30px;
+  transition: all 0.3s;
+  border-radius: 8px;
+}
+
+.btn-primary {
+  background: #007bff;
+  border: none;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .btn-lg {
+    font-size: 1rem;
+    padding: 10px 25px;
+  }
+
+  .card {
+    margin-bottom: 20px;
+  }
+}
+
+</style>

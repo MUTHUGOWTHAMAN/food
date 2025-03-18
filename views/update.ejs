@@ -1,0 +1,143 @@
+<%- include('partials/header') %>
+
+<div class="container mt-5">
+
+  <!-- Page Heading -->
+  <div class="text-center mb-4">
+    <i class="fas fa-money-bill-wave fa-6x text-success"></i>
+    <h1 class="display-4 mt-3">Update Fine</h1>
+    <p class="text-secondary">Modify student fine details with ease</p>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class="card shadow-lg border-0">
+        
+        <div class="card-body p-5">
+
+          <!-- Form -->
+          <form action="/updatepayment/id" method="POST">
+
+            <!-- Registration Number -->
+            <div class="form-group mb-4">
+              <label for="regno" class="form-label">Reg Number</label>
+              <input type="text" class="form-control form-control-lg" name="regno" placeholder="Enter Reg No" required>
+            </div>
+
+            <!-- Student Name -->
+            <div class="form-group mb-4">
+              <label for="name" class="form-label">Student Name</label>
+              <input type="text" class="form-control form-control-lg" name="studentname" placeholder="Enter Student Name" required>
+            </div>
+
+            <!-- Fine Amount -->
+            <div class="form-group mb-4">
+              <label for="amount" class="form-label">Update Amount</label>
+              <input type="number" class="form-control form-control-lg" name="amount" placeholder="Enter Fine Amount" required>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="text-center">
+              <button type="submit" class="btn btn-success btn-lg px-5">Update</button>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<%- include('partials/footer') %>
+
+<style>
+
+  /* General Styling */
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f0f0f0, #dbeafe);
+    color: #333;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+  }
+
+  /* Container Styling */
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 30px;
+  }
+
+  /* Card Styling */
+  .card {
+    border-radius: 15px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Form Styling */
+  label {
+    font-weight: bold;
+    color: #4dabf7;
+    font-size: 1.1rem;
+  }
+
+  .form-control {
+    border-radius: 8px;
+    font-size: 1rem;
+    padding: 12px;
+    transition: all 0.3s ease;
+  }
+
+  .form-control:focus {
+    border-color: #28a745;
+    box-shadow: 0 0 10px #28a745;
+  }
+
+  /* Button Styling */
+  .btn-success {
+    background: #28a745;
+    color: white;
+    border: none;
+    transition: all 0.3s;
+  }
+
+  .btn-success:hover {
+    background: #218838;
+    transform: scale(1.05);
+  }
+
+  /* Icon Styling */
+  .fa-money-bill-wave {
+    color: #28a745;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .container {
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    .form-control {
+      font-size: 0.9rem;
+      padding: 10px;
+    }
+
+    .btn-lg {
+      font-size: 1rem;
+      padding: 10px 25px;
+    }
+  }
+
+</style>

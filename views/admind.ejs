@@ -1,0 +1,141 @@
+<%- include('partials/header') %>
+
+<div class="container admin-container">
+  <div class="text-center">
+    <i class="fas fa-user-cog fa-8x admin-icon"></i>
+
+    <h1 class="display-3 mt-4">Admin Dashboard</h1>
+    <p class="lead">Manage Your Admin Operations with Ease</p>
+    <hr class="my-4">
+
+    <div class="btn-group">
+      <a href="/admin/register" class="btn-custom btn-primary">
+        <i class="fas fa-user-plus"></i> Register
+      </a>
+
+      <a href="/admin/login" class="btn-custom btn-success">
+        <i class="fas fa-sign-in-alt"></i> Login
+      </a>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/footer') %>
+
+<!-- New Styles -->
+<style>
+  /* Container Styling */
+  .admin-container {
+    background: linear-gradient(135deg, #f0f0f0, #d1e0fc);
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    padding: 60px 30px;
+    max-width: 900px;
+    margin: 60px auto;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .admin-container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Icon Styling */
+  .admin-icon {
+    color: #007bff;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .admin-icon:hover {
+    transform: scale(1.1);
+  }
+
+  /* Header Styling */
+  h1 {
+    font-size: 3.5rem;
+    color: #333;
+    font-weight: bold;
+  }
+
+  p.lead {
+    color: #666;
+    font-size: 1.4rem;
+  }
+
+  hr {
+    border: 0;
+    height: 2px;
+    background: linear-gradient(to right, #007bff, #00c6ff);
+    width: 60%;
+    margin: 30px auto;
+  }
+
+  /* Button Group */
+  .btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+  }
+
+  /* Button Styling */
+  .btn-custom {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 30px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  .btn-custom i {
+    margin-right: 10px;
+  }
+
+  /* Button Colors */
+  .btn-primary {
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+  }
+
+  .btn-success {
+    background: linear-gradient(135deg, #28a745, #20c997);
+  }
+
+  /* Hover Effects */
+  .btn-custom:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  }
+
+  .btn-primary:hover {
+    background: #00c6ff;
+  }
+
+  .btn-success:hover {
+    background: #20c997;
+  }
+
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .admin-container {
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    .btn-custom {
+      padding: 12px 20px;
+      font-size: 18px;
+    }
+  }
+</style>
+
+

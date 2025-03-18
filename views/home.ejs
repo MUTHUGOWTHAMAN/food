@@ -1,0 +1,132 @@
+<%- include('partials/header') %>
+
+<head>
+  <link rel="stylesheet" href="css/styles.css"> 
+</head>
+
+<!-- Main Section -->
+<div class="jumbotron centered" id="home-page">
+  <div class="container" id="grid">
+
+    <!-- Admin Section -->
+    <div class="nav-item">
+      <a href="/admin" role="button" class="btn-nav">
+        <img src="images/admin.jpg" alt="Admin Icon" class="button-icon"> 
+        <span>Admin</span>
+      </a>
+    </div>
+
+    <!-- Cashier Section -->
+    <div class="nav-item">
+      <a href="/cashier" role="button" class="btn-nav">
+        <img src="images/cash.jpg" alt="Cashier Icon" class="button-icon"> 
+        <span>Cashier</span>
+      </a>
+    </div>
+
+    <!-- Customer Section -->
+    <div class="nav-item">
+      <a href="/user" role="button" class="btn-nav">
+        <img src="images/customer.jpg" alt="Customer Icon" class="button-icon"> 
+        <span>Customer</span>
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<%- include('partials/footer') %>
+
+<style>
+
+/* General Styling */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f0f0f0, #e0f7fa);
+  color: #333;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* Jumbotron Styling */
+.jumbotron {
+  background: #ffffff;
+  padding: 100px 0;
+  text-align: center;
+}
+
+.jumbotron .container {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+/* Navigation Item Styling */
+.nav-item {
+  flex: 1;
+  min-width: 280px;
+  max-width: 350px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.nav-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Navigation Button Styling */
+.btn-nav {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  border-radius: 12px;
+  padding: 40px 20px;
+  transition: all 0.3s ease;
+}
+
+.btn-nav:hover {
+  background: linear-gradient(135deg, #0056b3, #003f7f);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}
+
+/* Button Icon Styling */
+.button-icon {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.btn-nav:hover .button-icon {
+  transform: scale(1.1);
+}
+
+/* Button Text */
+.btn-nav span {
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: block;
+  margin-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-item {
+    max-width: 100%;
+  }
+}
+
+</style>

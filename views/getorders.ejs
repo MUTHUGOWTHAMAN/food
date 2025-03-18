@@ -1,0 +1,38 @@
+<head>
+    <link rel="stylesheet" href="css/styles.css"> 
+  </head>
+  <h1>All Orders Detail</h1>
+  <% if (orderdata.length > 0) { %>
+    <table>
+      <thead>
+        <tr>
+          <th>orderNo</th>
+          <th>customerPhNo</th>
+          <th>productCategory</th>
+          <th>productName</th>
+          <th>date</th>
+          <th>foodamount</th>
+
+         
+          
+          
+        </tr>
+      </thead>
+      <tbody>
+        <% orderdata.forEach(function(order) { %>
+          <tr>
+            <td><%= order.orderNo %></td>
+            <td><%= order.customerPhNo %></td>
+            <td><%= order.productCategory%></td>
+            <td><%= order.productName %></td>
+            <td><%= order.date %></td>
+            <td><%= order.foodamount%></td>
+            
+           
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  <% } else { %>
+    <p>No data found.</p>
+  <% } %>

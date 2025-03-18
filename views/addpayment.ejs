@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Fine</title>
+    <style>
+        /* Page Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 30px;
+            background: #fff;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #444;
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            border: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .card-body {
+            padding: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 16px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #4CAF50;
+            box-shadow: 0 0 5px rgba(76, 175, 80, 0.6);
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            font-size: 18px;
+            color: #fff;
+            background: #17a2b8;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #138496;
+        }
+
+        /* Responsive Styling */
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .form-group {
+                margin-bottom: 15px;
+            }
+
+            input, select, button {
+                font-size: 14px;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<%- include('partials/header') %>
+
+<div class="container">
+  <h1>Add Payments</h1>
+
+  <div class="card">
+    <div class="card-body">
+      <!-- POST request form -->
+      <form action="/addpayment" method="POST">
+
+        <div class="form-group">
+          <label for="regno">Order Number</label>
+          <input type="text" class="form-control" name="orderNo" required>
+        </div>
+
+        <div class="form-group">
+          <label for="date">Date of Payment</label>
+          <input type="date" class="form-control" name="date" required>
+        </div>
+
+        <div class="form-group">
+          <label for="paymentby">Payment By</label>
+          <input type="number" class="form-control" name="customerPhNo" required>
+        </div>
+
+        <div class="form-group">
+          <label for="paymentfor">Payment For</label>
+          <input type="number" class="form-control" name="productId" required>
+        </div>
+
+        <div class="form-group">
+          <label for="productCategory">Product Category</label>
+          <select name="productCategory" required>
+            <option value="Regular">Regular</option>
+            <option value="Season">Season</option>
+            <option value="Special">Special</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="productName">Product Name</label>
+          <input type="text" class="form-control" name="productName" required>
+        </div>
+
+        <div class="form-group">
+          <label for="amount">Paid Amount</label>
+          <input type="number" class="form-control" name="foodamount" required>
+        </div>
+
+        <button type="submit">Order</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/footer') %>
+
+</body>
+</html>

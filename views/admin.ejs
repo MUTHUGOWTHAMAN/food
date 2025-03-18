@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Product Details</title>
+    <style>
+        /* Page Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: #fff;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .container:hover {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 40px;
+            color: #444;
+            margin-bottom: 10px;
+        }
+
+        .lead {
+            text-align: center;
+            font-size: 18px;
+            color: #888;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #555;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        input:focus, select:focus, button:focus {
+            border-color: #17a2b8;
+            outline: none;
+            box-shadow: 0 0 8px rgba(23, 162, 184, 0.5);
+        }
+
+        .btn-success {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .btn-success:hover {
+            background-color: #218838;
+        }
+
+        .btn-lg {
+            font-size: 18px;
+            padding: 12px 20px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Font Awesome Icons */
+        i {
+            margin-right: 8px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 30px;
+            }
+
+            input, select, button {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<%- include('partials/header') %>
+
+<div class="container">
+
+    <!-- Page Title -->
+    <div class="text-center mb-4">
+        <h1 class="display-4">Add Product Details</h1>
+        <p class="lead text-secondary">Fill in the details to add a new product</p>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+
+            <!-- Admin Product Form -->
+            <form action="/adminData" method="POST">
+
+                <!-- Product ID -->
+                <div class="form-group">
+                    <label for="productId"><i class="fas fa-barcode"></i> Product ID</label>
+                    <input type="text" id="productId" name="productId" placeholder="Enter Product ID" required>
+                </div>
+
+                <!-- Product Category -->
+                <div class="form-group">
+                    <label for="productCategory"><i class="fas fa-tags"></i> Product Category</label>
+                    <select id="productCategory" name="productCategory" required>
+                        <option value="Regular">Regular</option>
+                        <option value="Season">Season</option>
+                        <option value="Special">Special</option>
+                    </select>
+                </div>
+
+                <!-- Product Name -->
+                <div class="form-group">
+                    <label for="productName"><i class="fas fa-utensils"></i> Product Name</label>
+                    <input type="text" id="productName" name="productName" placeholder="Enter Product Name" required>
+                </div>
+
+                <!-- Food Amount -->
+                <div class="form-group">
+                    <label for="foodAmount"><i class="fas fa-dollar-sign"></i> Food Amount</label>
+                    <input type="text" id="foodAmount" name="foodamount" placeholder="Enter Food Amount" required>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="text-center">
+                    <button type="submit" class="btn btn-success btn-lg">
+                        <i class="fas fa-check-circle"></i> Submit
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+</div>
+
+<%- include('partials/footer') %>
+
+</body>
+</html>

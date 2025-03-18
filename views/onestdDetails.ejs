@@ -1,0 +1,158 @@
+<head>
+  <link rel="stylesheet" href="css/styles.css"/>
+</head>
+
+<div class="container mt-5">
+
+  <!-- Page Header -->
+  <div class="text-center mb-4">
+    <i class="fas fa-user-graduate fa-6x text-primary"></i>
+    <h1 class="display-4 mt-3">Details for <%= Regno %></h1>
+    <p class="text-secondary">View all fines associated with this registration number</p>
+    <hr class="my-4">
+  </div>
+
+  <!-- Table Section -->
+  <% if (fines.length > 0) { %>
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <th>Student Name</th>
+            <th>Registration Number</th>
+            <th>Email</th>
+            <th>Course</th>
+            <th>Fine Name</th>
+            <th>Fine Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% fines.forEach(function(fine) { %>
+            <% if(Regno == fine.regno) { %>
+              <tr>
+                <td><%= fine.studentname %></td>
+                <td><%= fine.regno %></td>
+                <td><%= fine.email %></td>
+                <td><%= fine.course %></td>
+                <td><%= fine.finename %></td> 
+                <td class="text-danger font-weight-bold">$<%= fine.amount %></td>
+              </tr>
+            <% } %>
+          <% }); %>
+        </tbody>
+      </table>
+    </div>
+  <% } else { %>
+    <div class="alert alert-warning text-center">
+      <i class="fas fa-exclamation-triangle"></i> No fines found for this registration number.
+    </div>
+  <% } %>
+  
+</div>
+
+<style>
+
+/* General Styling */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f0f0f0, #e0f7fa);
+  color: #333;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* Container */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+/* Header */
+h1 {
+  color: #007bff;
+  font-size: 2.5rem;
+}
+
+p {
+  color: #555;
+}
+
+/* Table Styling */
+.table {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.table:hover {
+  transform: scale(1.02);
+}
+
+.table th {
+  background: #343a40;
+  color: #ffffff;
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 15px;
+}
+
+.table td {
+  font-size: 1rem;
+  padding: 12px;
+  text-align: center;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background: #f2f2f2;
+}
+
+.table-striped tbody tr:nth-of-type(even) {
+  background: #ffffff;
+}
+
+.table-hover tbody tr:hover {
+  background: #e0f7fa;
+  transition: background 0.3s;
+}
+
+/* Fine Amount Styling */
+.text-danger {
+  color: #dc3545 !important;
+}
+
+/* Alert Box */
+.alert {
+  border-radius: 12px;
+  padding: 20px;
+  font-size: 1.2rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Icons */
+.fas {
+  margin-right: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .table {
+    font-size: 0.9rem;
+  }
+
+  .alert {
+    font-size: 1rem;
+  }
+}
+</style>

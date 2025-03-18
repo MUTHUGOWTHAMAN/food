@@ -1,0 +1,144 @@
+<%- include('partials/header') %>
+
+<div class="container mt-5" style="max-width: 1100px; margin: 0 auto;">
+
+  <!-- Cashier Header -->
+  <div class="text-center mb-5">
+    <i class="fas fa-cash-register fa-7x text-primary"></i>
+    <h1 class="display-4 mt-3">Cashier Dashboard</h1>
+    <p class="lead text-secondary">Manage Orders, Payments, and Customer Data</p>
+    <hr class="my-4">
+  </div>
+
+  <!-- Button Section -->
+  <div class="row g-4">
+
+    <!-- Get All Order Data -->
+    <div class="col-lg-4 col-md-6">
+      <a href="/getProducts" class="btn-custom btn-success w-100">
+        <i class="fas fa-clipboard-list"></i> Get All Order Data
+      </a>
+    </div>
+
+    <!-- Add Payment -->
+    <div class="col-lg-4 col-md-6">
+      <a href="/addPayment" class="btn-custom btn-info w-100">
+        <i class="fas fa-credit-card"></i> Add Payment
+      </a>
+    </div>
+
+    <!-- Enter Your Category -->
+    <div class="col-lg-4 col-md-6">
+      <a href="/categorywise" class="btn-custom btn-warning w-100">
+        <i class="fas fa-th-list"></i> Enter Your Category
+      </a>
+    </div>
+
+    <!-- Get Customer Data -->
+    <div class="col-lg-4 col-md-6">
+      <a href="/customerData" class="btn-custom btn-primary w-100">
+        <i class="fas fa-users"></i> Get Customer Data
+      </a>
+    </div>
+
+    <!-- Get Particular Order -->
+    <div class="col-lg-4 col-md-6">
+      <a href="/getonedata" class="btn-custom btn-danger w-100">
+        <i class="fas fa-search"></i> Get Particular Order
+      </a>
+    </div>
+
+  </div>
+
+</div>
+
+<%- include('partials/footer') %>
+
+<!-- New Styles -->
+<style>
+  /* Container Styling */
+  .container {
+    background: linear-gradient(135deg, #f3f3f3, #f9f9f9);
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+  }
+
+  /* Header Styling */
+  .text-center i {
+    color: #007bff;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .text-center i:hover {
+    transform: scale(1.1);
+  }
+
+  /* Button Styling */
+  .btn-custom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 25px;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .btn-custom i {
+    margin-right: 10px;
+  }
+
+  /* Button Colors */
+  .btn-success {
+    background: linear-gradient(135deg, #28a745, #218838);
+  }
+
+  .btn-info {
+    background: linear-gradient(135deg, #17a2b8, #138496);
+  }
+
+  .btn-warning {
+    background: linear-gradient(135deg, #ffc107, #e0a800);
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+  }
+
+  .btn-danger {
+    background: linear-gradient(135deg, #dc3545, #c82333);
+  }
+
+  /* Button Hover Effects */
+  .btn-custom:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Button Hover Colors */
+  .btn-success:hover {
+    background: #218838;
+  }
+
+  .btn-info:hover {
+    background: #138496;
+  }
+
+  .btn-warning:hover {
+    background: #e0a800;
+  }
+
+  .btn-primary:hover {
+    background: #0056b3;
+  }
+
+  .btn-danger:hover {
+    background: #c82333;
+  }
+
+</style>

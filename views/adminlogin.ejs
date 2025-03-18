@@ -1,0 +1,42 @@
+<%- include('partials/header') %>
+
+<div class="container mt-5" style="max-width: 600px; margin: 0 auto;">
+
+  <div class="text-center mb-4">
+    <h1 class="display-4">Admin Login</h1>
+    <p class="lead text-secondary">Sign in to manage products</p>
+  </div>
+
+  <div class="card shadow-lg">
+    <div class="card-body">
+
+      <!-- Admin Login Form -->
+      <form action="/admin/login" method="POST">
+
+        <!-- Email -->
+        <div class="form-group">
+          <label for="email"><i class="fas fa-envelope"></i> Email</label>
+          <input type="email" id="email" class="form-control" name="email" placeholder="Enter Email" required>
+        </div>
+
+        <!-- Password -->
+        <div class="form-group mt-3">
+          <label for="password"><i class="fas fa-lock"></i> Password</label>
+          <input type="password" id="password" class="form-control" name="password" placeholder="Enter Password" required>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="text-center mt-4">
+          <button type="submit" class="btn btn-success btn-lg">
+            <i class="fas fa-sign-in-alt"></i> Login
+          </button>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</div>
+
+<%- include('partials/footer') %>

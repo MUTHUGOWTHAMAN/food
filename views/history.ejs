@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Order Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #444;
+            margin: 20px 0;
+        }
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background: #fff;
+        }
+
+        th, td {
+            padding: 12px 20px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        p {
+            text-align: center;
+            color: #888;
+        }
+
+        a {
+            display: inline-block;
+            margin: 20px auto;
+            text-align: center;
+            text-decoration: none;
+            color: #fff;
+            background: #4CAF50;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        a:hover {
+            background: #45a049;
+        }
+
+    </style>
+</head>
+<body>
+
+<h1>Your Order Details</h1>
+
+<% if (orders.length > 0) { %>
+    <table>
+        <thead>
+            <tr>
+                <th>Order No</th>
+                <th>Customer Phone No</th>
+                <th>Product Category</th>
+                <th>Product Name</th>
+                <th>Food Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% orders.forEach(function(order) { %>
+                <% if(customerPhNo == order.customerPhNo) { %>
+                    <tr>
+                        <td><%= order.orderNo %></td>
+                        <td><%= order.customerPhNo %></td>
+                        <td><%= order.productCategory %></td>
+                        <td><%= order.productName %></td>
+                        <td>$<%= order.foodamount.toFixed(2) %></td>
+                    </tr>
+                <% } %>
+            <% }); %>
+        </tbody>
+    </table>
+<% } else { %>
+    <p>No orders found.</p>
+<% } %>
+
+<a href="/">Go Back</a>
+
+</body>
+</html>
